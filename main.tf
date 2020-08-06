@@ -1,7 +1,7 @@
 # Terraform state will be stored in S3
 terraform {
   backend "s3" {
-    bucket = "fuckingirish"
+    bucket = "tarunaws"
     key    = "Punk_ath"
     region = "us-east-2"
   }
