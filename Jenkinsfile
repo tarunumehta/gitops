@@ -9,7 +9,7 @@ try {
     }
   }
 
-  // Run terraform init
+  // Run /usr/local/bin/terraform init
   stage('init') {
     node {
       withCredentials([[
@@ -19,13 +19,13 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform init'
+          sh '/usr/local/bin/terraform init'
         }
       }
     }
   }
 
-  // Run terraform plan
+  // Run /usr/local/bin/terraform plan
   stage('plan') {
     node {
       withCredentials([[
@@ -35,7 +35,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform plan'
+          sh '/usr/local/bin/terraform plan'
         }
       }
     }
@@ -43,7 +43,7 @@ try {
 
   if (env.BRANCH_NAME == 'master') {
 
-    // Run terraform apply
+    // Run /usr/local/bin/terraform apply
     stage('apply') {
       node {
         withCredentials([[
@@ -53,13 +53,13 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh 'terraform apply -auto-approve'
+            sh '/usr/local/bin/terraform apply -auto-approve'
           }
         }
       }
     }
 
-    // Run terraform show
+    // Run /usr/local/bin/terraform show
     stage('show') {
       node {
         withCredentials([[
@@ -69,7 +69,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh 'terraform show'
+            sh '/usr/local/bin/terraform show'
           }
         }
       }
