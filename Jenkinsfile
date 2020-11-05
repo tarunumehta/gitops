@@ -53,7 +53,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh '/usr/local/bin/terraform apply'
+            sh '/usr/local/bin/terraform apply -auto-approve'
           }
         }
       }
