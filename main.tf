@@ -1,7 +1,7 @@
 # Terraform state will be stored in S3
 terraform {
   backend "s3" {
-    bucket = "lcmpolicy"
+    bucket = "aws-cloudtrail-logs-611268242779-1870a82d"
     key    = "Punk_ath"
     region = "us-east-2"
   }
